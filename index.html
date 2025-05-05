@@ -1,18 +1,57 @@
-<!-- public/index.html -->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Redirecting...</title>
-    <script>
-      const params = new URLSearchParams(window.location.search);
-      const access_token = params.get("access_token");
-      const type = params.get("type");
-      // Ganti skema dengan punya kamu
-      window.location.href = `verda://confirm?access_token=${access_token}&type=${type}`;
-    </script>
-  </head>
-  <body>
-    <p>Redirecting to app...</p>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Redirecting...</title>
+  <style>
+    body {
+      display: flex;
+      height: 100vh;
+      justify-content: center;
+      align-items: center;
+      font-family: sans-serif;
+      background-color: #f9fafb;
+    }
+    .box {
+      text-align: center;
+    }
+    .spinner {
+      margin-top: 1rem;
+      border: 4px solid #f3f3f3;
+      border-top: 4px solid #3b82f6;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      animation: spin 1s linear infinite;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h2>Redirecting back to the app...</h2>
+    <p>Please wait</p>
+    <div class="spinner"></div>
+  </div>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const accessToken = urlParams.get('access_token');
+    const type = urlParams.get('type');
+
+    // Bangun URL skema khusus untuk aplikasi Android
+    const redirectUrl = `verda://confirm?access_token=${accessToken}&type=${type}`;
+
+    // Redirect setelah 1 detik agar spinner sempat muncul
+    setTimeout(() => {
+      window.location.href = redirectUrl;
+    }, 1000);
+  </script>
+</body>
 </html>
