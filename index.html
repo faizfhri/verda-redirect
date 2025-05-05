@@ -1,0 +1,18 @@
+<!-- public/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Redirecting...</title>
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const access_token = params.get("access_token");
+      const type = params.get("type");
+      // Ganti skema dengan punya kamu
+      window.location.href = `verda://confirm?access_token=${access_token}&type=${type}`;
+    </script>
+  </head>
+  <body>
+    <p>Redirecting to app...</p>
+  </body>
+</html>
