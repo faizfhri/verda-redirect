@@ -2,6 +2,7 @@
   "rewrites": [
     { "source": "/confirm", "destination": "/index.html" },
     { "source": "/reset", "destination": "/reset.html" },
-    { "source": "/receive", "destination": "/receive.html" }
+    { "source": "/receive", "destination": "/receive.html" },
+    { "source": "/receive-confirm", "destination": "/receive-confirm.html" }
   ]
 }
