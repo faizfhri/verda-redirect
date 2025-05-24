@@ -1,6 +1,7 @@
 {
   "rewrites": [
     { "source": "/confirm", "destination": "/index.html" },
-    { "source": "/reset", "destination": "/reset.html" }
+    { "source": "/reset", "destination": "/reset.html" },
+    { "source": "/receive", "destination": "/receive.html" }
   ]
 }
